@@ -1,26 +1,39 @@
-Fecha: 23-04-22
+# What is LLAVER?
+Finish date: 23-04-22
+LLaver is an attempt of automation for the geriatric exam "Menti", also, it provides a system for manage and analyse the data results of the examns. 
 
-Antes de iniciar el servidor sigue los siguentes pasos:
+## How did we create the backend?
+- We developed the backend in `Nodejs` with `express`
+- The database used was MySQL.
+- For the project we implement a basic authentication system, using a **local strategy** (email and password stored in our database), we encrypted the password with `Bcrypt`.
+- The backend was deployed in `Heroku`.
 
-1 - Asegurate que la base de datos ya exista, en caso contrario corre el script que esta ubicado en:
-    conection_store > database.sql.
+## Usage
+1- If the database doesn't existe run the script located in: *conection_store > database.sql.*
 
-2 - Configurar el archivo "config.js"
-    *Por defecto el backend correra en el puerto 3002.
-    *El puerto del frontend lo conigure para que corriera en el puerto 3000 (defualt de react).
-    *Por defecto el host de mysql el "localhost".
-    *El nombre de la base de datos sera "proyecto_geriatra" (o si le pones otro nombre, cambiarlo por ese).
+2 - Set the environment variables in *config.js*
     
-    *Pon tus credenciales (usuario y contraseña) para hacer la conexcion a la base de datos.
-        Nota: Asegurate que el "usuario" tenga todos los "privilegios" necesarios.
+    > api: {
+    >    port: process.env.PORT || 3002  
+    > },
+    > frontend: {
+    >    port: process.env.PORT || 3000
+    > },
+    > mysql: {
+    >    host: process.env.MYSQL_HOST || <YOUR_HOST>,
+    >    database: process.env.MYSQL_DATABASE || <YOUR_DATABASE>,
+    >    user: process.env.MYSQL_USER || <YOUR_USER>,
+    >    password: process.env.MYSQL_PASSWORD || <YOUR_PASSWORD>
+    > },
+    > jwt: {
+    >    key: <YOUR_KEY>,
+    >    time: <EXPIRATION_TOKEN_TIME>
+    > },
+    >hash: {
+    >    times: <TIME_TO_HASH_BYCRP>
+    > } 
+   
 
-    En caso de que un dato este erróneo, cambialo para que la configuración sea la correcta.
+3 - Install the dependencies: npm install 
 
-3 - Instala los modulos (dependencias) necesarios, corre en tu terminal: npm i
-        En caso de que no funcione instala manualmente las dependencias necesarias ubicadas en "package.json"
-
-Ya con lo anterior realizado corre el servidor
-    node index.js 
-    (En caso de que tengas nodemon instalado: nodemon index.js )
-
-    Nota: Asegurate que tu consola este en la ruta donde esta el index.js
+4 - Run the project `node index.js` (Be careful of be in the project directory.)
