@@ -1,14 +1,15 @@
-# What is LLAVER?
-Finish date: 23-04-22
+# What is LLAVER? :mag_right:
+Finish date: 23-04-22 :date:
 LLaver is an attempt of automation for the geriatric exam "Menti", also, it provides a system for manage and analyse the data results of the examns. 
 
-## How did we create the backend?
+## How did we create the backend? :construction:
 - We developed the backend in `Nodejs` with `express`
 - The database used was MySQL.
 - For the project we implement a basic authentication system, using a **local strategy** (email and password stored in our database), we encrypted the password with `Bcrypt`.
+- For persistence of session user, we use `JWT`.
 - The backend was deployed in `Heroku`.
 
-## Usage
+## Usage :memo:
 1- If the database doesn't existe run the script located in: *conection_store > database.sql.*
 
 2 - Set the environment variables in *config.js*
@@ -33,7 +34,9 @@ LLaver is an attempt of automation for the geriatric exam "Menti", also, it prov
     >    times: <TIME_TO_HASH_BYCRP>
     > } 
    
-
 3 - Install the dependencies: npm install 
 
-4 - Run the project `node index.js` (Be careful of be in the project directory.)
+4 - Run the project `node index.js` (Be careful of be in the project directory)
+
+## Deploy in heroku :computer:
+Create the your repository in heroku and follow the instructions.
