@@ -39,4 +39,4 @@ LLaver is an attempt of automation for the geriatric exam "Menti", also, it prov
 4 - Run the project `node index.js` (Be careful of be in the project directory)
 
 ## Deploy in heroku :computer:
-Create the your repository in heroku and follow the instructions.
+Create your repository on heroku and follow the instructions.
